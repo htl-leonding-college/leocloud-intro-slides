@@ -1,13 +1,20 @@
-= git - Grundlagen
-#:customcss: css/presentation.css
+= LeoCloud
+:customcss: css/presentation.css
 :revealjs_customtheme: css/sky.css
 :revealjs_width: 1408
 :revealjs_height: 792
-:author: Thomas W. Stütz
+:source-highlighter: highlightjs
+:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
+:revealjs_parallaxBackgroundSize: 4936px 2092px
+:highlightjs-theme: css/atom-one-light.css
+// we want local served font-awesome fonts
+:iconfont-remote!:
+:iconfont-name: fonts/fontawesome/css/all
+:author: C. Aberger, T. Stütz
 :email: t.stuetz@htl-leonding.ac.at
 :revnumber: 1.0
 :revdate: {docdate}
-:revremark: Initial Release for AHS presentation
+:revremark: SCHILF @ HTL Leonding
 :encoding: utf-8
 :lang: de
 :imagesdir: images
@@ -19,6 +26,40 @@
 //:numbered:
 
 
+== Warum LeoCloud in der Ausbildung?
+
+* Der Begriff Cloud ist heute allgegenwärtig.
+
+
+
+
+=== Was ist LeoCloud?
+
+* Ansammlung von Computern im Keller
+* Mit Software Kubernetes (k8s)
+
+=== Was soll gelehrt werden?
+
+* Nicht nur der Aufbau der Cloud
+* insbesonders der Prozess vom Quellcode bis zum Deployment in der Cloud
+
+=== Vorhandene Cloud Angebote
+
+* Google Cloud
+* Amazon AWS
+* Microsoft Azure
+* Oracle Cloud
+* RedHat OpenShift (IBM)
+* IBM Cloud
+
+=== Warum nicht ein vorhandenes Angebot nutzen?
+
+* Monetäres Risiko
+* Besseres Verständnis des Grundprinzips (k8s)
+
+////
+
+[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
 [.columns]
 == Zur Person
 
@@ -44,6 +85,7 @@
 ** doc-as-code (Asciidoctor)
 ** IoT
 
+[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
 == Gründe für VCS
 
 * VCS ... https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control[Version Control Systems, window="_blank"]
@@ -51,6 +93,47 @@
 * Zentralisiertes Code-Repository für Programmier-Teams
 * Geordnetes Erstellen von Programmvarianten (Branches)
 * u.v.m.
+
+=== Microbenchmark Suite [jep]#https://openjdk.java.net/jeps/230[JEP 230]# [version]#12#
+
+[.col3-lc]
+--
+[.small.source,java]
+----
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@State(Scope.Thread)
+public class BenchmarkIntegers {
+    @Param("500")
+    private int size;
+    private String[] strings;
+
+    @Setup
+    public void setup() {
+        Random r = new Random(0);
+        strings = new String[size];
+        for (int i = 0; i < size; i++) {
+            strings[i] = "" + (r.nextInt(10000) - 5000);
+        }
+    }
+
+    @Benchmark
+    public void parseInt(Blackhole bh) {
+        for (String s : strings) {
+            bh.consume(Integer.parseInt(s));
+        }
+    }
+}
+----
+--
+
+[.col3-r.small]
+--
+* Based on `jmh`
+* Avoids JIT Falltrips
+* Start via Maven Archteype
+--
+
 
 == Git for Schools
 
@@ -219,7 +302,7 @@ image::github-my-first-repo-2.png[background, size="cover"]
 * https://codewithmosh.com/[Code with Mosh (Aktion abwarten), window="_blank"]
 * https://www.udemy.com/[Udemy (Aktion abwarten), window="_blank"]
 
-
+////
 ////
 
 

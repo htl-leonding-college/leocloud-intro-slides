@@ -25,6 +25,11 @@
 
 //:numbered:
 
+[%notitle]
+== Teaser
+
+image::it-works-on-my-machine-then-well-ship-your-machine-61899587.png[background, size=contain]
+
 == Agenda
 
 * LeoCloud
@@ -60,6 +65,7 @@
 * Oracle Cloud
 * RedHat OpenShift (IBM)
 * IBM Cloud
+* ...
 
 === Warum nicht ein vorhandenes Angebot nutzen?
 
@@ -79,7 +85,7 @@ image::kanonische-architektur-2.png[background, size="contain"]
 
 == Lauffähige Zwischenergebnisse am Produktionsserver
 
-image::works-on-my-machine-shut-up-should-we-ship-your-machine-to-the-customer.jpg[,width=600]
+image::works-on-my-machine-shut-up-should-we-ship-your-machine-to-the-customer.jpg[,width=500]
 
 //[%notitle]
 === Scrum
@@ -91,7 +97,7 @@ image::scrum_process.png[, width="1200"]
 * Wie macht man ein Projekt?
 --
 
-
+[.lightbg,background-video="../videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.7"]
 == Technische Grundlagen des Deployments
 
 === Docker
@@ -136,6 +142,7 @@ image::github-my-first-repo.png[background, size="contains"]
 * Speicher für meine Source-Files
 * ist kostenfrei (-> education)
 * ist Industriestandard
+* kostenfrei für statische Webseiten
 
 === gh-actions
 

@@ -25,10 +25,19 @@
 
 //:numbered:
 
+== Agenda
 
+* LeoCloud
+* Projekt-Architektur
+* Projektdurchführung (Scrum)
+* Deployment
+
+[.lightbg,background-video="../videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
 == Warum LeoCloud in der Ausbildung?
 
 * Der Begriff Cloud ist heute allgegenwärtig.
+* Die Abolventen der HTL Leonding sind nicht nur User der Cloud ...
+* ... sondern Maker -> wir bauen die Cloud
 
 
 
@@ -36,12 +45,12 @@
 === Was ist LeoCloud?
 
 * Ansammlung von Computern im Keller
-* Mit Software Kubernetes (k8s)
+* Mit Software *Kubernetes* (k8s)
 
 === Was soll gelehrt werden?
 
-* Nicht nur der Aufbau der Cloud
-* insbesonders der Prozess vom Quellcode bis zum Deployment in der Cloud
+* Nicht nur der Aufbau der Cloud, sondern ...
+* .... insbesondere der Prozess vom Quellcode bis zur (automatisch) verfügbaren Anwendung in der Cloud
 
 === Vorhandene Cloud Angebote
 
@@ -54,8 +63,114 @@
 
 === Warum nicht ein vorhandenes Angebot nutzen?
 
-* Monetäres Risiko
-* Besseres Verständnis des Grundprinzips (k8s)
+* kostenpflichtig -> monetäres Risiko für Schüler
+* Verständnis des Funktionsweise (von kubernetes)
+* Abrundung der Ausbildung an der HTL Leonding
+* Know-How in Europa halten
+
+
+
+
+[%notitle]
+== Kanonische Architektur
+
+image::kanonische-architektur-2.png[background, size="contain"]
+
+
+== Lauffähige Zwischenergebnisse am Produktionsserver
+
+image::works-on-my-machine-shut-up-should-we-ship-your-machine-to-the-customer.jpg[,width=600]
+
+//[%notitle]
+=== Scrum
+
+image::scrum_process.png[, width="1200"]
+
+[.notes]
+--
+* Wie macht man ein Projekt?
+--
+
+
+== Technische Grundlagen des Deployments
+
+=== Docker
+
+image::docker-lightweight-virt.png[,width=1200]
+
+
+=== Dockerfile, Images and Containers
+
+image::docker-dockerfile-image-container.png[width=1200]
+
+=== Docker Network
+
+image:docker-network.png[width=1200]
+
+[.lightbg,background-video="../videos/orchestra.mp4",background-video-loop="true",background-opacity="0.7"]
+=== docker-compose
+
+[.refs]
+--
+* Video by cottonbro from Pexels
+--
+
+* Orchestrierung von Containern
+
+=== docker-compose Beispiel
+
+image::docker-compose.png[, width="1200"]
+
+
+
+=== kubernetes (k8s)
+
+* to be continued ...
+
+[.lightbg,background-opacity="0.7"]
+=== git / github
+
+image::github-my-first-repo.png[background, size="contains"]
+
+* wo der Sourcecode "wohnt"
+* Speicher für meine Source-Files
+* ist kostenfrei (-> education)
+* ist Industriestandard
+
+=== gh-actions
+
+* Zum Automatisieren von Vorgängen
+** kompilieren
+** testen
+** paketieren der Einzeldateien zur Applikation
+** Ausbringen auf Produktionsserver (in der Cloud)
+
+=== CI/CD
+
+[plantuml,pipeline,png]
+----
+include::plantuml/pipeline.puml[]
+----
+
+[plantuml,pipeline2,png]
+----
+include::plantuml/pipeline2.puml[]
+----
+
+//image::ci-cd-cd-atlassian.png[, width=1200]
+
+[.lightbg,background-video="../videos/keyboard.mp4",background-video-loop="true",background-opacity="0.7"]
+== Demo
+
+[.lightbg,background-video="../videos/hammer.mp4",background-video-loop="true",background-opacity="0.7"]
+== Workshop
+
+
+== Links
+
+* https://github.com/htl-leonding-college/leocloud-intro-slides[github-repo, window="_blank"]
+* https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/[Continous Deployment w/ gh-actions]
+
 
 ////
 

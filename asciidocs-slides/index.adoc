@@ -25,6 +25,9 @@
 
 //:numbered:
 
+// Kürzen des Videos
+// ffmpeg -ss 00:00:00 -i orchestra.mp4 -to 00:00:05 -c copy orchestra-short.mp4
+
 [%notitle]
 == Teaser
 
@@ -40,20 +43,31 @@ image::it-works-on-my-machine-then-well-ship-your-machine-61899587.png[backgroun
 [.lightbg,background-video="../videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
 == Warum LeoCloud in der Ausbildung?
 
+[%step]
 * Der Begriff Cloud ist heute allgegenwärtig.
 * Die Abolventen der HTL Leonding sind nicht nur User der Cloud ...
 * ... sondern Maker -> wir bauen die Cloud
 
 
 
+[.lightbg,background-opacity="0.7"]
+=== Was ist die Leo-Cloud?
 
-=== Was ist LeoCloud?
+image::data-center.jpg[background, size=contain]
 
 * Ansammlung von Computern im Keller
+* BareMetal
 * Mit Software *Kubernetes* (k8s)
+
+[.refs]
+--
+* Photo by Brett Sayles from Pexels
+
+--
 
 === Was soll gelehrt werden?
 
+[%step]
 * Nicht nur der Aufbau der Cloud, sondern ...
 * .... insbesondere der Prozess vom Quellcode bis zur (automatisch) verfügbaren Anwendung in der Cloud
 
@@ -69,6 +83,7 @@ image::it-works-on-my-machine-then-well-ship-your-machine-61899587.png[backgroun
 
 === Warum nicht ein vorhandenes Angebot nutzen?
 
+[%step]
 * kostenpflichtig -> monetäres Risiko für Schüler
 * Verständnis des Funktionsweise (von kubernetes)
 * Abrundung der Ausbildung an der HTL Leonding
@@ -142,7 +157,7 @@ image::github-my-first-repo.png[background, size="contains"]
 * Speicher für meine Source-Files
 * ist kostenfrei (-> education)
 * ist Industriestandard
-* kostenfrei für statische Webseiten
+* kostenfreie statische Webseiten
 
 === gh-actions
 
@@ -177,6 +192,14 @@ include::plantuml/pipeline2.puml[]
 
 * https://github.com/htl-leonding-college/leocloud-intro-slides[github-repo, window="_blank"]
 * https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/[Continous Deployment w/ gh-actions]
+
+
+== Requirements
+
+* Docker Desktop
+* WSL2
+* Editor
+* git - client
 
 
 ////

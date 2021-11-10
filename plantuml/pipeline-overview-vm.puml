@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+rectangle "IDE" as ide {
+  file "(java-)code" as code
+}
+
+database "remote\ngit-repo" as gitrepo
+
+node "ubuntu" <<gh-hosted-runner>> as ghrunner {
+  database "local\ngit-repo" as localrepo
+  (gh-actions\n.yml-file) as ghactions
+  artifact "binary" as ghbinary
+}
+node "ubuntu" <<remote-server>> as remoteserver {
+  artifact "binary" as remotebinary
+}
+
+code --> gitrepo
+gitrepo --> localrepo : triggered by \npush
+localrepo --> ghactions
+ghactions --> ghbinary: process
+ghbinary --> remotebinary : ssh/scp
+
+@enduml

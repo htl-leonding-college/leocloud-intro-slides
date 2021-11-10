@@ -1,0 +1,9 @@
+@startuml
+rectangle "centralized vcs" as vcs
+actor hansi
+actor luki
+actor susi
+susi -up- vcs
+hansi -up- vcs
+luki -up-vcs
+@enduml

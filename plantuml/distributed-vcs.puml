@@ -1,0 +1,17 @@
+@startuml
+rectangle "remote vcs" as vcs
+rectangle "local repo" as repo1
+rectangle "local repo" as repo2
+rectangle "local repo" as repo3
+
+actor hansi
+actor luki
+actor susi
+susi -up- repo1
+hansi -up- repo3
+luki -up-repo2
+
+repo1 -up- vcs
+repo2 -up- vcs
+repo3 -up- vcs
+@enduml
